@@ -32,10 +32,14 @@ const LoginForm = ({ setIsLoggedIn }) => {
   }
 
   return (
-    <form onSubmit={submitHandler}>
-      <label>
-        <p>
-          Email Address <sup>*</sup> {/* super script */}
+    <form
+      onSubmit={submitHandler}
+      className="flex flex-col w-full gap-y-4 mt-6"
+    >
+      <label className="w-full">
+        <p className="text-[0.875rem] text-richblack-5 mb-1 leading-[1.375rem]">
+          Email Address <sup className=" text-pink-200">*</sup>{" "}
+          {/* super script */}
         </p>
 
         <input
@@ -45,12 +49,13 @@ const LoginForm = ({ setIsLoggedIn }) => {
           value={formData.email}
           onChange={changeHandler}
           placeholder="Enter email address"
+          className="w-full bg-richblack-800 rounded-[0.5rem] text-richblack-5 p-[12px] border-b-2  border-b-richblack-700"
         />
       </label>
 
-      <label>
-        <p>
-          Password<sup>*</sup> {/* super script */}
+      <label className=" w-full">
+        <p className="text-[0.875rem] text-richblack-5 mb-1 leading-[1.375rem]">
+          Password<sup className=" text-pink-200">*</sup> {/* super script */}
         </p>
 
         <input
@@ -60,6 +65,7 @@ const LoginForm = ({ setIsLoggedIn }) => {
           value={formData.password}
           onChange={changeHandler}
           placeholder="Enter Password"
+          className="w-full bg-richblack-800 rounded-[0.5rem] text-richblack-5 p-[12px] border-b-2  border-b-richblack-700"
         />
 
         <span onClick={() => setShowPassword((prev) => !prev)}>
